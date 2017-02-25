@@ -1,18 +1,24 @@
 class Author {
-  constructor(public name: string) { }
-}
+  books: Book[] = [];
 
-class Book {
-  constructor(public title: string, public author: Author) { }
+  constructor(private name: string) { }
 
-  description() {
-    return `${this.title} by ${this.author.name}`;
+  addBook(book: Book) {
+    this.books.push(book);
   }
 }
 
-window.onload = function() {
-  var johnSteinbeck = new Author('John Steinbeck');
-  var ofMiceAndMen = new Book('Of Mice and Men', johnSteinbeck);
+class Book {
+  constructor(public title: string) { }
+}
 
-  document.getElementById('content').innerHTML = ofMiceAndMen.description();
+window.onload = function() {
+  var author = new Author('John Steinbeck');
+
+  author.addBook(new Book('Of Mice and Men'));
+  author.addBook(new Book('The Grapes of Wrath'));
+
+  author.books.forEach(function(book) {
+    console.log(book.title);
+  });
 };
