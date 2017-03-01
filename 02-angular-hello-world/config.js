@@ -25,7 +25,6 @@ System.config({
     
     'rxjs': 'npm:rxjs'
   },
-  //packages defines our app package
   packages: {
     app: {
       main: './main.ts',
