@@ -7,10 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
     <h1>Hello!</h1>
   `
 })
-export class App implements OnInit {
+export class App {
   constructor() {}
-  
-  ngOnInit() {}
 }
 
 @NgModule({
