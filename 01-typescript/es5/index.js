@@ -10,7 +10,7 @@ function Author(name) {
 
 Author.prototype.addBook = function(book) {
   this.books.push(book);
-}
+};
 
 window.onload = function() {
   var author = new Author('John Steinbeck');
