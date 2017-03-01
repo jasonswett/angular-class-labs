@@ -1,7 +1,11 @@
+class Book {
+  constructor(public title: string, public yearPublished: number) { }
+}
+
 class Author {
   public books: Book[] = [];
 
-  constructor(private name: string) { }
+  constructor(public name: string) { }
 
   addBook(book: Book) {
     this.books.push(book);
@@ -9,10 +13,6 @@ class Author {
 
   booksOrderedByTitle() { }
   booksOrderedByYearPublished() { }
-}
-
-class Book {
-  constructor(public title: string, private yearPublished: number) { }
 }
 
 window.onload = function() {
