@@ -1,6 +1,6 @@
 function addTwoNumbers(a, b) {
   if (isNaN(a) || isNaN(b)) {
-    return false;
+    throw new Error('Both arguments must be numbers');
   }
 
   return a + b;
@@ -12,14 +12,18 @@ describe('addTwoNumbers', function() {
   });
 
   describe('first number is not a number', function() {
-    it('returns false', function() {
-      expect(addTwoNumbers('some string', 5)).toBe(false);
+    it('throws an error', function() {
+      expect(function() {
+        addTwoNumbers('some string', 5);
+      }).toThrow(new Error('Both arguments must be numbers'));
     });
   });
 
   describe('second number is not a number', function() {
-    it('returns false', function() {
-      expect(addTwoNumbers(4, 'some string')).toBe(false);
+    it('throws an error', function() {
+      expect(function() {
+        addTwoNumbers(4, 'some string');
+      }).toThrow(new Error('Both arguments must be numbers'));
     });
   });
 });
