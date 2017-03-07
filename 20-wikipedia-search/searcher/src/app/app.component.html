@@ -4,5 +4,5 @@
 <input #term (keyup)="search(term.value)"/>
 
 <ul>
-  <li *ngFor="let item of items | async">{{item}}</li>
+  <li *ngFor="let item of items">{{item}}</li>
 </ul>

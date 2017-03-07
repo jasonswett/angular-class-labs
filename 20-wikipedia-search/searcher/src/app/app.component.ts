@@ -9,11 +9,12 @@ import { WikipediaService } from './wikipedia.service';
   providers: [WikipediaService]
 })
 export class AppComponent {
-  items: Observable<string[]>;
+  items: Array<string>;
 
   constructor (private wikipediaService: WikipediaService) { }
 
   search (term: string) {
-    this.items = this.wikipediaService.search(term);
+    this.wikipediaService.search(term)
+      .subscribe(items => this.items = items);
   }
 }
