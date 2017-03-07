@@ -6,18 +6,17 @@ import 'rxjs/add/operator/map';
 export class WikipediaService {
   constructor(private jsonp: Jsonp) { }
 
-  search (term: string) {
-
-    let wikiUrl = 'http://en.wikipedia.org/w/api.php';
+  search (searchTerm: string) {
+    let wikipediaUrl = 'https://en.wikipedia.org/w/api.php';
 
     let params = new URLSearchParams();
-    params.set('search', term); // the user's search value
+    params.set('search', searchTerm);
     params.set('action', 'opensearch');
     params.set('format', 'json');
     params.set('callback', 'JSONP_CALLBACK');
 
     return this.jsonp
-      .get(wikiUrl, { search: params })
+      .get(wikipediaUrl, { search: params })
       .map(response => <string[]> response.json()[1]);
   }
 }
