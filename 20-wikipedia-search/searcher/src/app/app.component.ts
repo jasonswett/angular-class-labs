@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { WikipediaService } from './wikipedia.service';
 
 @Component({
@@ -11,9 +10,9 @@ import { WikipediaService } from './wikipedia.service';
 export class AppComponent {
   items: Array<string>;
 
-  constructor (private wikipediaService: WikipediaService) { }
+  constructor(private wikipediaService: WikipediaService) { }
 
-  search (term: string) {
+  search(term: string) {
     this.wikipediaService.search(term)
       .subscribe(items => this.items = items);
   }
