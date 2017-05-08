@@ -1,4 +1,3 @@
-<button>Hamburger</button>
-<button>Cheeseburger</button>
-<button>Fries</button>
-<button>Drink</button>
+<span *ngFor="let menuItem of menuItems">
+  <button (click)="placeOrder(menuItem)">{{ menuItem }}</button>
+</span>

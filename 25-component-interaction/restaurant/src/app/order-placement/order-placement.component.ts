@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-placement.component.css']
 })
 export class OrderPlacementComponent implements OnInit {
+  menuItems = [
+    'Hamburger',
+    'Cheeseburger',
+    'Fries',
+    'Drink'
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  placeOrder(menuItem) {
+    console.log(menuItem);
+  }
 }
